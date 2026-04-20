@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Produtos | Kobratec</title>
+  <meta name="description"
+    content="Explore o catálogo completo de produtos Kobratec: soluções para criação animal, consumo humano, irrigação, baterias automotivas, embalagens e industrial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    :root {
+      --blue-inst: #1F497A;
+      --blue-deep: #16385E;
+      --blue-mid: #4D7099;
+      --green-accent: #AFC446;
+      --green-dark: #8FA233;
+      --green-light: #C7D97A;
+      --white: #FFFFFF;
+      --gray-light: #F3F5F7;
+      --gray-mid: #C9D1D9;
+      --charcoal: #111111;
+      --font: 'Inter', sans-serif;
+      --transition: 0.3s ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--charcoal);
+      background: #fff;
+      overflow-x: hidden
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    ul {
+      list-style: none
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    /* NAVBAR */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      background: var(--blue-deep);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .3)
+    }
+
+    .nav-logo img {
+      height: 38px;
+      filter: brightness(0) invert(1)
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, .8);
+      font-size: .88rem;
+      font-weight: 500;
+      transition: color var(--transition);
+      position: relative
+    }
+
+    .nav-links a:hover {
+      color: #fff
+    }
+
+    .nav-links a.active {
+      color: var(--green-accent)
+    }
+
+    .nav-cta {
+      background: var(--green-accent);
+      color: var(--blue-deep) !important;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: .85rem
+    }
+
+    .nav-cta:hover {
+      background: var(--green-light)
+    }
+
+    /* PAGE HERO */
+    .page-hero {
+      margin-top: 72px;
+      background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-inst) 100%);
+      padding: 56px 5% 48px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -5%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(175, 196, 70, .08);
+      pointer-events: none
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+      background-size: 48px 48px
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .55);
+      margin-bottom: 16px
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, .55);
+      transition: color var(--transition)
+    }
+
+    .breadcrumb a:hover {
+      color: var(--green-accent)
+    }
+
+    .breadcrumb i {
+      width: 12px;
+      height: 12px
+    }
+
+    .page-hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      margin-bottom: 12px
+    }
+
+    .page-hero h1 span {
+      color: var(--green-accent)
+    }
+
+    .page-hero p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, .65);
+      max-width: 520px;
+      line-height: 1.7
+    }
+
+    .hero-stats-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 32px;
+      flex-wrap: wrap
+    }
+
+    .mini-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .mini-stat-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--green-accent);
+      line-height: 1
+    }
+
+    .mini-stat-label {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .5);
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase
+    }
+
+    /* LAYOUT */
+    .catalog-wrap {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      min-height: calc(100vh - 280px)
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      background: var(--gray-light);
+      border-right: 1px solid rgba(201, 209, 217, .6);
+      padding: 32px 0;
+      position: sticky;
+      top: 72px;
+      height: calc(100vh - 72px);
+      overflow-y: auto
+    }
+
+    .sidebar::-webkit-scrollbar {
+      width: 4px
+    }
+
+    .sidebar::-webkit-scrollbar-track {
+      background: transparent
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background: var(--gray-mid);
+      border-radius: 4px
+    }
+
+    .sidebar-section {
+      padding: 0 24px;
+      margin-bottom: 32px
+    }
+
+    .sidebar-section:first-child {
+      padding-top: 0
+    }
+
+    .sidebar-title {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #8899aa;
+      margin-bottom: 12px
+    }
+
+    .seg-filter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px
+    }
+
+    .seg-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+      background: transparent;
+      width: 100%;
+      text-align: left;
+      font-family: var(--font);
+      color: #4a5568;
+      font-size: .875rem;
+      font-weight: 500
+    }
+
+    .seg-btn:hover {
+      background: #fff;
+      color: var(--blue-inst)
+    }
+
+    .seg-btn.active {
+      background: var(--blue-inst);
+      color: #fff
+    }
+
+    .seg-btn .seg-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: background var(--transition)
+    }
+
+    .seg-btn .count {
+      margin-left: auto;
+      font-size: .72rem;
+      font-weight: 700;
+      background: rgba(0, 0, 0, .08);
+      padding: 2px 7px;
+      border-radius: 100px;
+      color: inherit;
+      opacity: .7
+    }
+
+    /* Search */
+    .search-wrap {
+      padding: 24px 24px 0;
+      margin-bottom: 24px
+    }
+
+    .search-input-wrap {
+      position: relative
+    }
+
+    .search-input-wrap input {
+      width: 100%;
+      padding: 11px 40px 11px 16px;
+      border: 1px solid var(--gray-mid);
+      border-radius: 10px;
+      font-family: var(--font);
+      font-size: .875rem;
+      color: var(--charcoal);
+      background: #fff;
+      outline: none;
+      transition: border-color var(--transition)
+    }
+
+    .search-input-wrap input:focus {
+      border-color: var(--blue-inst)
+    }
+
+    .search-input-wrap i {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      stroke: #8899aa;
+      pointer-events: none
+    }
+
+    /* CATALOG MAIN */
+    .catalog-main {
+      padding: 32px 40px;
+      background: #fff
+    }
+
+    .catalog-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(201, 209, 217, .5);
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .active-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-inst);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 600
+    }
+
+    .active-tag button {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, .7);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-left: 2px;
+      padding: 0;
+      transition: color var(--transition)
+    }
+
+    .active-tag button:hover {
+      color: #fff
+    }
+
+    .results-count {
+      font-size: .85rem;
+      color: #8899aa;
+      font-weight: 500
+    }
+
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .view-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--gray-mid);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition)
+    }
+
+    .view-btn:hover,
+    .view-btn.active {
+      background: var(--blue-inst);
+      border-color: var(--blue-inst)
+    }
+
+    .view-btn:hover svg,
+    .view-btn.active svg {
+      stroke: #fff
+    }
+
+    .view-btn svg {
+      stroke: var(--blue-mid);
+      width: 16px;
+      height: 16px
+    }
+
+    select.sort-select {
+      padding: 8px 14px;
+      border: 1px solid var(--gray-mid);
+      border-radius: 8px;
+      font-family: var(--font);
+      font-size: .8rem;
+      color: var(--charcoal);
+      background: #fff;
+      outline: none;
+      cursor: pointer
+    }
+
+    /* PRODUCT GRID */
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px
+    }
+
+    .prod-grid.list-view {
+      grid-template-columns: 1fr
+    }
+
+    .prod-card {
+      border-radius: 14px;
+      border: 1px solid rgba(201, 209, 217, .7);
+      background: #fff;
+      overflow: hidden;
+      transition: all var(--transition);
+      cursor: pointer;
+      position: relative
+    }
+
+    .prod-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(31, 73, 122, .13);
+      border-color: rgba(31, 73, 122, .25)
+    }
+
+    .prod-card-img {
+      height: 200px;
+      background: var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .prod-card-img .prod-icon-bg {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--blue-inst), var(--blue-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(31, 73, 122, .25);
+      transition: transform var(--transition)
+    }
+
+    .prod-card:hover .prod-card-img .prod-icon-bg {
+      transform: scale(1.08) rotate(-3deg)
+    }
+
+    .prod-card-img .prod-icon-bg svg {
+      width: 36px;
+      height: 36px;
+      stroke: #fff;
+      stroke-width: 1.6
+    }
+
+    .prod-seg-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    .prod-new-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--green-accent);
+      color: var(--blue-deep);
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase
+    }
+
+    .prod-card-body {
+      padding: 20px
+    }
+
+    .prod-card-body h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      margin-bottom: 6px;
+      line-height: 1.35
+    }
+
+    .prod-card-body p {
+      font-size: .8rem;
+      color: #6b7c93;
+      line-height: 1.6;
+      margin-bottom: 14px
+    }
+
+    .prod-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .prod-sub-label {
+      font-size: .7rem;
+      color: #8fa233;
+      font-weight: 600;
+      background: rgba(143, 162, 51, .1);
+      padding: 4px 10px;
+      border-radius: 100px
+    }
+
+    .prod-action-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--gray-light);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition)
+    }
+
+    .prod-action-btn:hover {
+      background: var(--green-accent)
+    }
+
+    .prod-action-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--blue-inst)
+    }
+
+    .prod-action-btn:hover svg {
+      stroke: var(--blue-deep)
+    }
+
+    /* LIST VIEW CARD */
+    .prod-grid.list-view .prod-card {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      align-items: center
+    }
+
+    .prod-grid.list-view .prod-card-img {
+      height: 100%;
+      border-radius: 0;
+      min-height: 100px
+    }
+
+    .prod-grid.list-view .prod-card-body {
+      padding: 16px 20px
+    }
+
+    .prod-grid.list-view .prod-card-body p {
+      margin-bottom: 0
+    }
+
+    .prod-grid.list-view .prod-card-footer {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      padding: 16px
+    }
+
+    /* SECTION HEADER */
+    .seg-section {
+      margin-bottom: 48px
+    }
+
+    .seg-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--gray-light)
+    }
+
+    .seg-section-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue-inst), var(--blue-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .seg-section-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: #fff;
+      stroke-width: 2
+    }
+
+    .seg-section-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--blue-deep)
+    }
+
+    .seg-section-count {
+      font-size: .8rem;
+      color: #8899aa;
+      font-weight: 500
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: #8899aa
+    }
+
+    .empty-state i {
+      display: block;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      stroke: var(--gray-mid)
+    }
+
+    /* FOOTER */
+    #footer {
+      background: var(--charcoal);
+      padding: 48px 5% 28px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px
+    }
+
+    .footer-brand p {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .45);
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 260px
+    }
+
+    .footer-col h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .85);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 18px
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px
+    }
+
+    .footer-col ul li a {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .45);
+      transition: color var(--transition)
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--green-accent)
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .3)
+    }
+
+    .footer-logo img {
+      height: 30px;
+      filter: brightness(0) invert(1);
+      opacity: .55
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px) {
+      .catalog-wrap {
+        grid-template-columns: 1fr
+      }
+
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-mid)
+      }
+
+      .catalog-main {
+        padding: 24px 20px
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none
+      }
+
+      .hero-stats-row {
+        gap: 20px
+      }
+
+      .prod-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* FADE IN */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* MODAL */
+    /* ── MODAL BASE ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(10, 20, 40, .72);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible
+    }
+
+    .modal-box {
+      background: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 860px;
+      max-height: 92vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transform: scale(.94) translateY(20px);
+      transition: transform .3s ease;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, .45)
+    }
+
+    .modal-overlay.open .modal-box {
+      transform: scale(1) translateY(0)
+    }
+
+    /* ── MODAL HEADER ── */
+    .modal-header {
+      padding: 28px 32px 20px;
+      position: relative;
+      flex-shrink: 0
+    }
+
+    .modal-header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px
+    }
+
+    .modal-icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .2)
+    }
+
+    .modal-icon-wrap svg {
+      width: 28px;
+      height: 28px;
+      stroke: #fff;
+      stroke-width: 1.8
+    }
+
+    .modal-close {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(0, 0, 0, .08);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+      flex-shrink: 0;
+      margin-left: 12px
+    }
+
+    .modal-close:hover {
+      background: rgba(0, 0, 0, .16)
+    }
+
+    .modal-close svg {
+      width: 16px;
+      height: 16px;
+      stroke: #555
+    }
+
+    .modal-seg {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 8px
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      letter-spacing: -.02em;
+      line-height: 1.2
+    }
+
+    .modal-sub {
+      font-size: .8rem;
+      font-weight: 600;
+      color: #8899aa;
+      margin-top: 3px
+    }
+
+    /* ── TABS ── */
+    .modal-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--gray-light);
+      padding: 0 32px;
+      flex-shrink: 0;
+      background: #fff
+    }
+
+    .modal-tab-btn {
+      padding: 12px 20px;
+      border: none;
+      background: transparent;
+      font-family: var(--font);
+      font-size: .82rem;
+      font-weight: 600;
+      color: #8899aa;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap
+    }
+
+    .modal-tab-btn:hover {
+      color: var(--blue-inst)
+    }
+
+    .modal-tab-btn.active {
+      color: var(--blue-inst);
+      border-bottom-color: var(--blue-inst)
+    }
+
+    /* ── MODAL BODY ── */
+    .modal-body {
+      padding: 28px 32px 28px;
+      overflow-y: auto;
+      flex: 1
+    }
+
+    .modal-body::-webkit-scrollbar {
+      width: 4px
+    }
+
+    .modal-body::-webkit-scrollbar-thumb {
+      background: var(--gray-mid);
+      border-radius: 4px
+    }
+
+    .modal-tab-panel {
+      display: none
+    }
+
+    .modal-tab-panel.active {
+      display: block
+    }
+
+    /* Rich content blocks */
+    .rc-text {
+      font-size: .92rem;
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: 18px
+    }
+
+    .rc-text p {
+      margin-bottom: 12px
+    }
+
+    .rc-text p:last-child {
+      margin-bottom: 0
+    }
+
+    .rc-img-wrap {
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gray-light);
+      background: var(--gray-light)
+    }
+
+    .rc-img-wrap img {
+      width: 100%;
+      display: block;
+      max-height: 340px;
+      object-fit: contain;
+      background: #f8f9fa;
+      padding: 12px
+    }
+
+    .rc-img-caption {
+      font-size: .78rem;
+      color: #8899aa;
+      padding: 10px 14px;
+      font-style: italic;
+      border-top: 1px solid var(--gray-light)
+    }
+
+    .rc-list {
+      list-style: none;
+      margin: 0 0 18px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px
+    }
+
+    .rc-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .85rem;
+      color: #4a5568;
+      font-weight: 500;
+      padding: 8px 12px;
+      background: var(--gray-light);
+      border-radius: 8px
+    }
+
+    .rc-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-dark);
+      flex-shrink: 0
+    }
+
+    /* Tags panel */
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px
+    }
+
+    .modal-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 10px;
+      background: var(--gray-light);
+      font-size: .8rem;
+      font-weight: 600;
+      color: #4a5568
+    }
+
+    .modal-tag svg {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0
+    }
+
+    /* Benefits panel */
+    .modal-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 24px
+    }
+
+    .modal-benefit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--gray-light);
+      font-size: .82rem;
+      font-weight: 500;
+      color: #4a5568
+    }
+
+    .modal-benefit svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0
+    }
+
+    /* Actions */
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-light);
+      margin-top: 4px
+    }
+
+    .modal-btn-primary {
+      flex: 1;
+      min-width: 160px;
+      padding: 13px 22px;
+      background: var(--green-accent);
+      color: var(--blue-deep);
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font);
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background .2s
+    }
+
+    .modal-btn-primary:hover {
+      background: var(--green-light)
+    }
+
+    .modal-btn-secondary {
+      flex: 1;
+      min-width: 160px;
+      padding: 13px 22px;
+      background: #25d366;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: var(--font);
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background .2s
+    }
+
+    .modal-btn-secondary:hover {
+      background: #20b558
+    }
+
+    /* Nav */
+    .modal-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 32px;
+      border-top: 1px solid var(--gray-light);
+      background: var(--gray-light);
+      flex-shrink: 0
+    }
+
+    .modal-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      background: #fff;
+      font-family: var(--font);
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--blue-inst);
+      cursor: pointer;
+      transition: all .2s;
+      border: 1px solid var(--gray-mid)
+    }
+
+    .modal-nav-btn:hover {
+      background: var(--blue-inst);
+      color: #fff;
+      border-color: var(--blue-inst)
+    }
+
+    .modal-nav-btn svg {
+      width: 14px;
+      height: 14px
+    }
+
+    .modal-nav-pos {
+      font-size: .8rem;
+      color: #8899aa;
+      font-weight: 500
+    }
+
+    @media(max-width:768px) {
+      .modal-box {
+        border-radius: 14px;
+        max-width: 100%
+      }
+
+      .modal-header {
+        padding: 20px 20px 14px
+      }
+
+      .modal-tabs {
+        padding: 0 16px
+      }
+
+      .modal-body {
+        padding: 20px 20px 20px
+      }
+
+      .modal-benefits {
+        grid-template-columns: 1fr
+      }
+
+      .rc-list {
+        grid-template-columns: 1fr
+      }
+
+      .modal-nav {
+        padding: 12px 16px
+      }
+
+      .modal-title {
+        font-size: 1.25rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo"><a href="kobratec-home.html"><img src="logo-kobra.png" alt="Kobratec"></a></div>
+    <div class="nav-links">
+      <a href="kobratec-home.html#segmentos">Segmentos</a>
+      <a href="#" class="active">Produtos</a>
+      <a href="kobratec-home.html#diferenciais">Por que Kobratec</a>
+      <a href="kobratec-home.html#sobre">Sobre</a>
+      <a href="kobratec-home.html#footer">Contato</a>
+      <a href="kobratec-home.html#cta-banner" class="nav-cta">Solicitar Orçamento</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="hero-inner">
+      <div class="breadcrumb">
+        <a href="kobratec-home.html">Início</a>
+        <i data-lucide="chevron-right"></i>
+        <span>Catálogo de Produtos</span>
+      </div>
+      <h1>Catálogo <span>Completo</span></h1>
+      <p>Explore nossa linha completa de soluções para criação animal, consumo humano, irrigação, baterias, embalagens e
+        industrial. Mais de 100 produtos desenvolvidos com inovação e qualidade.</p>
+      <div class="hero-stats-row">
+        <div class="mini-stat">
+          <div class="mini-stat-num">100+</div>
+          <div class="mini-stat-label">Produtos</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">6</div>
+          <div class="mini-stat-label">Segmentos</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">50+</div>
+          <div class="mini-stat-label">Países</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">29+</div>
+          <div class="mini-stat-label">Anos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATALOG -->
+  <div class="catalog-wrap">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="search-wrap">
+        <div class="search-input-wrap">
+          <input type="text" id="searchInput" placeholder="Buscar produto..." autocomplete="off">
+          <i data-lucide="search"></i>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Segmentos</div>
+        <div class="seg-filter-list">
+          <button class="seg-btn active" data-seg="all" onclick="filterSeg('all',this)">
+            <span class="seg-dot" style="background:#AFC446"></span> Todos os Segmentos <span class="count"
+              id="cnt-all">0</span>
+          </button>
+          <button class="seg-btn" data-seg="criacao" onclick="filterSeg('criacao',this)">
+            <span class="seg-dot" style="background:#1F497A"></span> Criação Animal <span class="count"
+              id="cnt-criacao">0</span>
+          </button>
+          <button class="seg-btn" data-seg="consumo" onclick="filterSeg('consumo',this)">
+            <span class="seg-dot" style="background:#4D7099"></span> Consumo Humano <span class="count"
+              id="cnt-consumo">0</span>
+          </button>
+          <button class="seg-btn" data-seg="irrigacao" onclick="filterSeg('irrigacao',this)">
+            <span class="seg-dot" style="background:#8FA233"></span> Irrigação / Hidroponia <span class="count"
+              id="cnt-irrigacao">0</span>
+          </button>
+          <button class="seg-btn" data-seg="baterias" onclick="filterSeg('baterias',this)">
+            <span class="seg-dot" style="background:#16385E"></span> Baterias Automotivas <span class="count"
+              id="cnt-baterias">0</span>
+          </button>
+          <button class="seg-btn" data-seg="embalagens" onclick="filterSeg('embalagens',this)">
+            <span class="seg-dot" style="background:#AFC446"></span> Embalagens <span class="count"
+              id="cnt-embalagens">0</span>
+          </button>
+          <button class="seg-btn" data-seg="industrial" onclick="filterSeg('industrial',this)">
+            <span class="seg-dot" style="background:#8FA233"></span> Industrial / Combustível <span class="count"
+              id="cnt-industrial">0</span>
+          </button>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Tipo de Produto</div>
+        <div class="seg-filter-list">
+          <button class="seg-btn" data-type="dosador" onclick="filterType('dosador',this)"><span class="seg-dot"
+              style="background:#4D7099"></span> Dosadores</button>
+          <button class="seg-btn" data-type="estacao" onclick="filterType('estacao',this)"><span class="seg-dot"
+              style="background:#4D7099"></span> Estações de Tratamento</button>
+          <button class="seg-btn" data-type="filtro" onclick="filterType('filtro',this)"><span class="seg-dot"
+              style="background:#4D7099"></span> Filtros</button>
+          <button class="seg-btn" data-type="purificador" onclick="filterType('purificador',this)"><span class="seg-dot"
+              style="background:#4D7099"></span> Purificadores</button>
+          <button class="seg-btn" data-type="tanque" onclick="filterType('tanque',this)"><span class="seg-dot"
+              style="background:#4D7099"></span> Tanques e Reservatórios</button>
+          <button class="seg-btn" data-type="acessorio" onclick="filterType('acessorio',this)"><span class="seg-dot"
+              style="background:#4D7099"></span> Acessórios e Válvulas</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CATALOG -->
+    <main class="catalog-main">
+      <div class="catalog-toolbar">
+        <div class="toolbar-left">
+          <span class="results-count" id="resultsCount">Carregando...</span>
+        </div>
+        <div class="toolbar-right">
+          <button class="view-btn active" id="gridViewBtn" onclick="setView('grid')" title="Grade">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+            </svg>
+          </button>
+          <button class="view-btn" id="listViewBtn" onclick="setView('list')" title="Lista">
+            <svg viewBox="0 0 24 24" fill="none">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+          </button>
+          <select class="sort-select" onchange="sortProducts(this.value)">
+            <option value="default">Ordenar: Relevância</option>
+            <option value="az">Nome: A → Z</option>
+            <option value="za">Nome: Z → A</option>
+          </select>
+        </div>
+      </div>
+      <div class="prod-grid" id="prodGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none">
+        <i data-lucide="search-x"></i>
+        <p style="font-size:1rem;font-weight:600;color:#4a5568;margin-bottom:8px">Nenhum produto encontrado</p>
+        <p style="font-size:.875rem">Tente outro termo ou remova os filtros ativos.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="prodModal" onclick="handleOverlayClick(event)">
+    <div class="modal-box" id="modalBox">
+      <div class="modal-header" id="modalHeader">
+        <div class="modal-header-top">
+          <div class="modal-icon-wrap" id="modalIcon">
+            <svg id="modalIconSvg" viewBox="0 0 24 24" fill="none"></svg>
+          </div>
+          <button class="modal-close" onclick="closeModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-seg" id="modalSeg"></div>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-sub" id="modalSub"></div>
+      </div>
+      <!-- TABS -->
+      <div class="modal-tabs" id="modalTabsEl"></div>
+      <!-- BODY (dynamic) -->
+      <div class="modal-body" id="modalBodyEl"></div>
+      <div class="modal-nav">
+        <button class="modal-nav-btn" id="modalPrev" onclick="navigateModal(-1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+          Anterior
+        </button>
+        <span class="modal-nav-pos" id="modalPos"></span>
+        <button class="modal-nav-btn" id="modalNext" onclick="navigateModal(1)">
+          Próximo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div><img src="logo-kobra.png" alt="Kobratec" style="height:32px;filter:brightness(0) invert(1);opacity:.6">
+        </div>
+        <p>Elevando a qualidade de vida por meio de soluções inovadoras, eficientes e de fácil aplicação desde 1997.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Segmentos</h4>
+        <ul>
+          <li><a href="#">Criação Animal</a></li>
+          <li><a href="#">Consumo Humano</a></li>
+          <li><a href="#">Irrigação / Hidroponia</a></li>
+          <li><a href="#">Baterias Automotivas</a></li>
+          <li><a href="#">Embalagens</a></li>
+          <li><a href="#">Industrial / Combustível</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>A Empresa</h4>
+        <ul>
+          <li><a href="#">Nossa História</a></li>
+          <li><a href="#">Certificações</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Distribuidores</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#">Solicitar Orçamento</a></li>
+          <li><a href="#">Consulta Técnica</a></li>
+          <li><a href="#">Downloads</a></li>
+          <li><a href="#">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kobratec. Todos os direitos reservados.</p>
+      <p>Desenvolvido com excelência e inovação.</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // ─── CMS INTEGRATION ────────────────────────────────────────────
+    // Load products from CMS (localStorage) or fall back to hardcoded data
+    function loadCMSProducts() {
+      try {
+        const raw = localStorage.getItem('cms_products');
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        if (!Array.isArray(data) || data.length === 0) return null;
+        // Map CMS fields to page format
+        return data
+          .filter(p => p.status === 'active')
+          .sort((a, b) => (a.order || 999) - (b.order || 999))
+          .map(p => ({
+            id: p.id,
+            name: p.name,
+            desc: p.shortDesc || '',
+            seg: p.seg,
+            type: p.type,
+            sub: p.sub || '',
+            icon: p.icon || 'layers',
+            color: p.color || '#1F497A',
+            img: p.img || null,
+            destaque: !!p.destaque,
+            content: Array.isArray(p.content) ? p.content : [],
+          }));
+      } catch (e) {
+        console.warn('CMS load failed, using fallback data.', e);
+        return null;
+      }
+    }
+
+    // ─── PRODUCT DATA ────────────────────────────────────────────────
+    const PRODUCTS_FALLBACK = [
+      // CRIAÇÃO ANIMAL
+      { id: 1, name: 'Quarteto Plus', desc: 'Estação de tratamento de água completa para criação animal com 4 etapas de tratamento.', seg: 'criacao', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#1F497A' },
+      {
+        id: 2, name: 'Quarteto Aves', desc: 'Estação Compacta de Tratamento de Água de Baixa Pressão', seg: 'criacao', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#1F497A', img: 'quarteto-aves-0.png',
+        content: [
+          { type: 'text', value: 'O Quarteto® Kobra trata a água de forma completa, melhorando a qualidade da água de bebida. O tratamento ocorre em 4 etapas: 1- Cloração, 2- Acidificação, 3- Filtragem e 4- Anti-Incrustação ou Corrosão.' },
+          { type: 'text', value: 'A primeira metade do Quarteto® Kobra é responsável pelo controle microbiológico através da Cloração (1), feita por meio da umidificação das pastilhas de Tricloro, e Acidificação (2) que reduz o PH da água através das pastilhas de ácidos orgânicos Acikobra®. A ação conjunta destes compostos otimiza a sanitização da água. Pois a ação do Cloro se torna mais eficiente em PH ácido.' },
+          { type: 'text', value: 'A segunda parte do processo realiza o controle físico-químico pelo Filtro Nipple® Kobra (3) que realiza o processo de filtragem por membrana porosa retendo as partículas sólidas presentes na água. O Filtro Nipple® Kobra é um produto de alta durabilidade, pois é lavável e reutilizável. Para finalizar, a água passa pelo quarto processo onde se dá a inativação dos agentes incrustantes (Dureza de água) e corrosivos (água oxidante) desempenhada pelo Antigota® Kobra (4), esta ação impede que os minerais como: Ferro, Carbonato de Cálcio e Manganês causem problemas de incrustação nos equipamentos de água e o gotejamento em bebedouros.' },
+          { type: 'image', src: 'quarteto-aves-1.jpg', caption: 'Diagrama de instalação — entre a caixa d\'água e o bebedouro do aviário' },
+          { type: 'text', value: 'O Quarteto Kobra deve ser instalado em local de fácil acesso, entre a caixa d\'água e o bebedouro do aviário. Indicado para instalações hidráulicas de granjas de aves, sendo facilmente manejado por técnicos agrícolas, tratadores e criadores.' },
+          { type: 'image', src: 'quarteto-aves-2.jpg', caption: 'Dados gerais e características técnicas do Quarteto® Kobra' },
+          { type: 'list', title: 'Diferenciais do Produto', items: ['Equipamento exclusivo Kobra', 'Maior qualidade de filtragem', 'Prático e Ajustável', 'Automático', 'Durável', 'Econômico', 'Tecnologia Microtec'] }
+        ]
+      },
+      { id: 3, name: 'Quarteto Suínos', desc: 'Tratamento de água direcionado para suínos com formulação específica de aditivos.', seg: 'criacao', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#1F497A' },
+      { id: 4, name: 'Quarteto Kobra Animais', desc: 'Solução completa de tratamento de água para criação animal em geral.', seg: 'criacao', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#1F497A' },
+      { id: 5, name: 'DOSATAK Saúde Animal', desc: 'Dosador automático de precisão para produtos de saúde animal na água de bebida.', seg: 'criacao', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#1F497A', destaque: true },
+      { id: 6, name: 'DOSATAK Saneamento', desc: 'Dosador automático para produtos de saneamento e desinfecção em ambientes produtivos.', seg: 'criacao', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#1F497A' },
+      { id: 7, name: 'DOSATAK Arco de Desinfecção', desc: 'Sistema de dosagem integrado ao arco de desinfecção para controle sanitário em entradas.', seg: 'criacao', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#1F497A' },
+      { id: 8, name: 'Dosador Noplax Ultra', desc: 'Dosador de alta precisão para aplicação do Noplax no sistema de água animal.', seg: 'criacao', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#1F497A' },
+      { id: 9, name: 'Medidor de Água Ultrassônico', desc: 'Medição precisa do consumo de água por ultrassom, sem partes móveis e alta durabilidade.', seg: 'criacao', type: 'acessorio', sub: 'Medição e Controle', icon: 'gauge', color: '#1F497A' },
+      { id: 10, name: 'Medidor de Qualidade de Água', desc: 'Monitoramento em tempo real dos parâmetros de qualidade da água para criação animal.', seg: 'criacao', type: 'acessorio', sub: 'Medição e Controle', icon: 'gauge', color: '#1F497A' },
+      { id: 11, name: 'Fita de Medição BRADOX', desc: 'Fita teste colorimétrica para verificação rápida da concentração de BRADOX na água.', seg: 'criacao', type: 'acessorio', sub: 'Medição e Controle', icon: 'ruler', color: '#1F497A' },
+      { id: 12, name: 'Kobramix Manual 50L', desc: 'Tanque de mistura manual com capacidade de 50 litros para preparo de soluções.', seg: 'criacao', type: 'tanque', sub: 'Tanques e Misturadores', icon: 'package', color: '#1F497A' },
+      { id: 13, name: 'Kobramix Manual 200L', desc: 'Tanque de mistura manual com capacidade de 200 litros para preparo de soluções em escala.', seg: 'criacao', type: 'tanque', sub: 'Tanques e Misturadores', icon: 'package', color: '#1F497A' },
+      { id: 14, name: 'Kobramix', desc: 'Sistema de mistura automatizado para preparo preciso de soluções e aditivos.', seg: 'criacao', type: 'tanque', sub: 'Tanques e Misturadores', icon: 'package', color: '#1F497A' },
+      { id: 15, name: 'BRADOX', desc: 'Produto à base de dióxido de cloro para tratamento e desinfecção da água de bebida animal.', seg: 'criacao', type: 'acessorio', sub: 'Produtos Químicos', icon: 'flask-conical', color: '#1F497A', destaque: true },
+      { id: 16, name: 'ACIKOBRA Pó Solúvel', desc: 'Acidificante em pó solúvel para redução de pH e melhoria da qualidade da água animal.', seg: 'criacao', type: 'acessorio', sub: 'Produtos Químicos', icon: 'flask-conical', color: '#1F497A' },
+      { id: 17, name: 'Noplax', desc: 'Agente antinível e controle de qualidade para sistemas de água de criação animal.', seg: 'criacao', type: 'acessorio', sub: 'Produtos Químicos', icon: 'flask-conical', color: '#1F497A' },
+      { id: 18, name: 'Acidificador', desc: 'Produto para acidificação e controle do pH da água em sistemas de criação.', seg: 'criacao', type: 'acessorio', sub: 'Produtos Químicos', icon: 'flask-conical', color: '#1F497A' },
+      { id: 19, name: 'Antidureza Suínos', desc: 'Produto para remoção de dureza da água destinada à criação de suínos.', seg: 'criacao', type: 'acessorio', sub: 'Produtos Químicos', icon: 'flask-conical', color: '#1F497A' },
+      { id: 20, name: 'Antigota Aves', desc: 'Produto antiespumante e antigota para linhas de nipple em aviários.', seg: 'criacao', type: 'acessorio', sub: 'Produtos Químicos', icon: 'flask-conical', color: '#1F497A' },
+      { id: 21, name: 'Tricloro Pastilhas', desc: 'Pastilhas de tricloro para desinfeção da água e limpeza de sistemas de bebedouros.', seg: 'criacao', type: 'acessorio', sub: 'Produtos Químicos', icon: 'flask-conical', color: '#1F497A' },
+      { id: 22, name: 'Painel Evaporativo NÓRDIK EC-PRO', desc: 'Sistema de climatização evaporativa para controle de temperatura em instalações de criação animal.', seg: 'criacao', type: 'acessorio', sub: 'Ventilação e Climatização', icon: 'wind', color: '#1F497A' },
+      { id: 23, name: 'Válvula Reguladora de Pressão Dinâmica', desc: 'Válvula de regulagem para manutenção de pressão constante em sistemas de bebedouros.', seg: 'criacao', type: 'acessorio', sub: 'Válvulas', icon: 'sliders', color: '#1F497A' },
+      { id: 24, name: 'Válvula Reguladora de Pressão Estática', desc: 'Regulagem de pressão estática para linhas de distribuição de água em criação animal.', seg: 'criacao', type: 'acessorio', sub: 'Válvulas', icon: 'sliders', color: '#1F497A' },
+
+      // CONSUMO HUMANO
+      { id: 25, name: 'Purificador W Free', desc: 'Purificador de água sem encanamento, com filtragem em múltiplos estágios para uso doméstico.', seg: 'consumo', type: 'purificador', sub: 'Purificadores', icon: 'droplets', color: '#4D7099', destaque: true },
+      { id: 26, name: 'Purificador W Plus', desc: 'Versão avançada do purificador W Free com maior capacidade de filtragem e life-time do refil.', seg: 'consumo', type: 'purificador', sub: 'Purificadores', icon: 'droplets', color: '#4D7099' },
+      { id: 27, name: 'Potabilizador Purific Standard', desc: 'Sistema de potabilização de água com tecnologia de desinfecção para diferentes fontes.', seg: 'consumo', type: 'purificador', sub: 'Potabilizadores', icon: 'shield-check', color: '#4D7099' },
+      { id: 28, name: 'Potabilizador Purific K', desc: 'Potabilizador com filtro de carvão ativado e eliminação de cloro residual.', seg: 'consumo', type: 'purificador', sub: 'Potabilizadores', icon: 'shield-check', color: '#4D7099' },
+      { id: 29, name: 'Potabilizador Purific Plus', desc: 'Potabilizador de alto desempenho com múltiplas etapas de purificação.', seg: 'consumo', type: 'purificador', sub: 'Potabilizadores', icon: 'shield-check', color: '#4D7099' },
+      { id: 30, name: 'Potabilizador Purific Plus K', desc: 'Versão completa com filtragem de carbono ativado e controle bacteriológico.', seg: 'consumo', type: 'purificador', sub: 'Potabilizadores', icon: 'shield-check', color: '#4D7099' },
+      { id: 31, name: 'Dosatak Healthcare', desc: 'Dosador automático para aplicação de produtos de saúde em sistemas de água para consumo.', seg: 'consumo', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#4D7099' },
+      { id: 32, name: 'Bradox Healthcare', desc: 'Dióxido de cloro formulado e certificado para tratamento de água potável.', seg: 'consumo', type: 'acessorio', sub: 'Produtos de Tratamento', icon: 'flask-conical', color: '#4D7099' },
+      { id: 33, name: 'Refil Freeflow Healthcare', desc: 'Refil de substituição para sistemas Freeflow com certificação para consumo humano.', seg: 'consumo', type: 'filtro', sub: 'Filtros e Refis', icon: 'filter', color: '#4D7099' },
+      { id: 34, name: 'Estação FK160', desc: 'Estação de tratamento de água com capacidade de 160 litros/hora para consumo humano.', seg: 'consumo', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#4D7099' },
+      { id: 35, name: 'Estação FK160 Plus', desc: 'Versão melhorada da FK160 com sistema avançado de monitoramento e controle.', seg: 'consumo', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#4D7099' },
+      { id: 36, name: 'Estação FK1000', desc: 'Estação de alto volume para tratamento de 1000 litros/hora para condomínios e empresas.', seg: 'consumo', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#4D7099', destaque: true },
+      { id: 37, name: 'Estação FK2000', desc: 'Estação de tratamento industrial para 2000 litros/hora com fácil manutenção modular.', seg: 'consumo', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#4D7099' },
+      { id: 38, name: 'Estação FK1000 Plus', desc: 'FK1000 com sistema Plus de monitoramento remoto e controle automatizado.', seg: 'consumo', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#4D7099' },
+      { id: 39, name: 'Estação FK2000 Plus', desc: 'Solução de alto volume com controle inteligente e alertas em tempo real.', seg: 'consumo', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#4D7099' },
+      { id: 40, name: 'ECTA-H', desc: 'Estação compacta de tratamento de água para consumo humano em comunidades e propriedades rurais.', seg: 'consumo', type: 'estacao', sub: 'Estações de Tratamento', icon: 'droplets', color: '#4D7099' },
+      { id: 41, name: 'Dosador Freeflow', desc: 'Dosador de fluxo livre para aplicação proporcional de produtos de tratamento.', seg: 'consumo', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#4D7099' },
+      { id: 42, name: 'Dosador Freeflow Power', desc: 'Versão de alta capacidade do Freeflow para aplicações de maior volume.', seg: 'consumo', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#4D7099' },
+      { id: 43, name: 'Refil W Free', desc: 'Refil de substituição para purificadores W Free com alta capacidade de filtragem.', seg: 'consumo', type: 'filtro', sub: 'Filtros e Refis', icon: 'filter', color: '#4D7099' },
+      { id: 44, name: 'Clarik', desc: 'Produto clarificador de água para remoção de turbidez e partículas em suspensão.', seg: 'consumo', type: 'acessorio', sub: 'Produtos de Tratamento', icon: 'flask-conical', color: '#4D7099' },
+      { id: 45, name: 'Carbon 5000', desc: 'Refil de carvão ativado de alta capacidade para remoção de cloro e contaminantes.', seg: 'consumo', type: 'filtro', sub: 'Filtros e Refis', icon: 'filter', color: '#4D7099' },
+      { id: 46, name: 'Mini Abrandador', desc: 'Sistema compacto de abrandamento para remoção de dureza da água.', seg: 'consumo', type: 'filtro', sub: 'Filtros e Refis', icon: 'filter', color: '#4D7099' },
+      { id: 47, name: 'Reservatório Térmico', desc: 'Reservatório com isolamento térmico para manutenção de temperatura da água tratada.', seg: 'consumo', type: 'tanque', sub: 'Tanques e Reservatórios', icon: 'package', color: '#4D7099' },
+      { id: 48, name: 'Reservatório de Água', desc: 'Reservatório de polietileno para armazenamento de água tratada para consumo.', seg: 'consumo', type: 'tanque', sub: 'Tanques e Reservatórios', icon: 'package', color: '#4D7099' },
+
+      // IRRIGAÇÃO / HIDROPONIA
+      { id: 49, name: 'DOSATAK Irrigação', desc: 'Dosador automático de precisão para fertirrigação e adubação via sistema de irrigação.', seg: 'irrigacao', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#8FA233', destaque: true },
+      { id: 50, name: 'ACIKOBRA Irrigação', desc: 'Acidificante para controle de pH em sistemas de irrigação e cultivos hidropônicos.', seg: 'irrigacao', type: 'acessorio', sub: 'Produtos de Tratamento', icon: 'flask-conical', color: '#8FA233' },
+      { id: 51, name: 'Kobramix Irrigação', desc: 'Sistema de mistura para preparo de nutrientes e aditivos em fertirrigação.', seg: 'irrigacao', type: 'tanque', sub: 'Tanques e Misturadores', icon: 'package', color: '#8FA233' },
+      { id: 52, name: 'Filtro AP25', desc: 'Filtro de 25 micras para proteção de gotejadores e emissores em sistemas de irrigação.', seg: 'irrigacao', type: 'filtro', sub: 'Filtros', icon: 'filter', color: '#8FA233' },
+      { id: 53, name: 'Filtro AP50', desc: 'Filtro de 50 micras para sistemas de micro-aspersão e gotejamento.', seg: 'irrigacao', type: 'filtro', sub: 'Filtros', icon: 'filter', color: '#8FA233' },
+      { id: 54, name: 'Filtro 60 Micra', desc: 'Filtro de 60 micras para nebulização e sistemas de alta precisão.', seg: 'irrigacao', type: 'filtro', sub: 'Filtros', icon: 'filter', color: '#8FA233' },
+      { id: 55, name: 'Filtro 1000 Micra', desc: 'Filtro de pré-filtragem com 1000 micras para proteção primária do sistema.', seg: 'irrigacao', type: 'filtro', sub: 'Filtros', icon: 'filter', color: '#8FA233' },
+      { id: 56, name: 'Bico Nebulizador', desc: 'Bico nebulizador de alta precisão para sistemas de climatização e irrigação foliar.', seg: 'irrigacao', type: 'acessorio', sub: 'Acessórios', icon: 'cloud-rain', color: '#8FA233' },
+      { id: 57, name: 'Ph Test Kobra', desc: 'Kit de teste de pH para monitoramento rápido e preciso em cultivos hidropônicos.', seg: 'irrigacao', type: 'acessorio', sub: 'Medição e Controle', icon: 'gauge', color: '#8FA233' },
+      { id: 58, name: 'Tricloro Pastilhas Irrigação', desc: 'Pastilhas de tricloro para desinfecção e limpeza de sistemas de irrigação.', seg: 'irrigacao', type: 'acessorio', sub: 'Produtos de Tratamento', icon: 'flask-conical', color: '#8FA233' },
+      { id: 59, name: 'Painel Evaporativo NÓRDIK EC-PRO', desc: 'Climatização evaporativa para estufas e ambientes de cultivo controlado.', seg: 'irrigacao', type: 'acessorio', sub: 'Climatização', icon: 'wind', color: '#8FA233' },
+      { id: 60, name: 'Refil Freeflow Irrigação', desc: 'Refil dosador para sistemas de irrigação com aplicação de nutrientes e aditivos.', seg: 'irrigacao', type: 'filtro', sub: 'Filtros e Refis', icon: 'filter', color: '#8FA233' },
+      { id: 61, name: 'Fita de Medição BRADOX Irrigação', desc: 'Fita colorimétrica para verificação do nível de desinfetante na água de irrigação.', seg: 'irrigacao', type: 'acessorio', sub: 'Medição e Controle', icon: 'ruler', color: '#8FA233' },
+
+      // BATERIAS AUTOMOTIVAS
+      { id: 62, name: 'Respiro Pastilha Antichamas Microtec', desc: 'Respiro com pastilha antichamas para baterias automotivas, prevenindo ignição de gases inflamáveis. Alta resistência química.', seg: 'baterias', type: 'acessorio', sub: 'Componentes para Baterias', icon: 'shield', color: '#16385E', destaque: true },
+
+      // EMBALAGENS
+      { id: 63, name: 'Respiro Válvula Tampa', desc: 'Válvula de respiro porosa plástica para equalização de pressão em embalagens, tambores e galões.', seg: 'embalagens', type: 'acessorio', sub: 'Válvulas para Embalagens', icon: 'package', color: '#AFC446', destaque: true },
+      { id: 64, name: 'Válvula de Tampa Kobra', desc: 'Válvula de alívio de pressão para tampas de embalagens plásticas e metálicas de grande capacidade.', seg: 'embalagens', type: 'acessorio', sub: 'Válvulas para Embalagens', icon: 'package', color: '#AFC446' },
+
+      // INDUSTRIAL / COMBUSTÍVEL
+      { id: 65, name: 'DOSATAK Industrial', desc: 'Dosador automático de alto desempenho para aplicações industriais de grande volume.', seg: 'industrial', type: 'dosador', sub: 'Dosadores', icon: 'settings', color: '#16385E', destaque: true },
+      { id: 66, name: 'Filtro Combustível Alumínio 25 Micra', desc: 'Filtro de alumínio de 25 micras para combustíveis, com alta resistência mecânica e química.', seg: 'industrial', type: 'filtro', sub: 'Filtros de Combustível', icon: 'filter', color: '#16385E' },
+      { id: 67, name: 'Filtro Combustível Separador', desc: 'Filtro separador de água e partículas em combustíveis para proteção de equipamentos.', seg: 'industrial', type: 'filtro', sub: 'Filtros de Combustível', icon: 'filter', color: '#16385E' },
+      { id: 68, name: 'Filtro Separador de Combustível Universal', desc: 'Filtro separador universal compatível com diesel, óleo e derivados de petróleo.', seg: 'industrial', type: 'filtro', sub: 'Filtros de Combustível', icon: 'filter', color: '#16385E' },
+      { id: 69, name: 'Cabeçote POM Preto', desc: 'Cabeçote em poliacetal POM para montagem de filtros industriais em sistemas de combustível.', seg: 'industrial', type: 'acessorio', sub: 'Componentes', icon: 'cog', color: '#16385E' },
+      { id: 70, name: 'Elemento Filtrante 100 Micra', desc: 'Elemento filtrante de substituição com 100 micras para sistemas industriais e combustíveis.', seg: 'industrial', type: 'filtro', sub: 'Filtros de Combustível', icon: 'filter', color: '#16385E' },
+    ];
+
+    // Use CMS data if available, otherwise fall back to hardcoded
+    const PRODUCTS = loadCMSProducts() || PRODUCTS_FALLBACK;
+
+    const SEG_COLORS = {
+      criacao: '#1F497A', consumo: '#4D7099', irrigacao: '#8FA233',
+      baterias: '#16385E', embalagens: '#AFC446', industrial: '#2d3748'
+    };
+    const SEG_LABELS = {
+
+      criacao: 'Criação Animal', consumo: 'Consumo Humano',
+      irrigacao: 'Irrigação / Hidroponia', baterias: 'Baterias Automotivas',
+      embalagens: 'Embalagens', industrial: 'Industrial / Combustível'
+    };
+
+    let currentSeg = 'all';
+    let currentType = '';
+    let currentSearch = '';
+    let currentView = 'grid';
+    let sortOrder = 'default';
+
+    function getFiltered() {
+      let list = [...PRODUCTS];
+      if (currentSeg !== 'all') list = list.filter(p => p.seg === currentSeg);
+      if (currentType) list = list.filter(p => p.type === currentType);
+      if (currentSearch) list = list.filter(p =>
+        p.name.toLowerCase().includes(currentSearch) ||
+        p.desc.toLowerCase().includes(currentSearch) ||
+        (p.sub && p.sub.toLowerCase().includes(currentSearch))
+      );
+      if (sortOrder === 'az') list.sort((a, b) => a.name.localeCompare(b.name));
+      if (sortOrder === 'za') list.sort((a, b) => b.name.localeCompare(a.name));
+      return list;
+    }
+
+    function updateCounts() {
+      const segs = ['all', 'criacao', 'consumo', 'irrigacao', 'baterias', 'embalagens', 'industrial'];
+      segs.forEach(s => {
+        const el = document.getElementById('cnt-' + s);
+        if (!el) return;
+        if (s === 'all') el.textContent = PRODUCTS.length;
+        else el.textContent = PRODUCTS.filter(p => p.seg === s).length;
+      });
+    }
+
+    function renderCards() {
+      const list = getFiltered();
+      const grid = document.getElementById('prodGrid');
+      const empty = document.getElementById('emptyState');
+      const count = document.getElementById('resultsCount');
+      count.textContent = list.length + ' produto' + (list.length !== 1 ? 's' : '') + ' encontrado' + (list.length !== 1 ? 's' : '');
+      if (list.length === 0) { grid.innerHTML = ''; empty.style.display = 'block'; lucide.createIcons(); return; }
+      empty.style.display = 'none';
+      grid.innerHTML = list.map((p, idx) => `
+    <div class="prod-card fade-in" data-seg="${p.seg}" onclick="openModal(${p.id})">
+      <div class="prod-card-img" style="background:${p.img ? '#f4f6f8' : `linear-gradient(135deg,${p.color}22,${p.color}44)`}">
+        ${p.img
+          ? `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain;padding:16px;display:block">`
+          : `<div class="prod-icon-bg" style="background:linear-gradient(135deg,${p.color},${p.color}cc)">
+               <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" data-lucide="${p.icon}"></svg>
+             </div>`
+        }
+        <span class="prod-seg-badge" style="background:${p.color}22;color:${p.color}">${SEG_LABELS[p.seg]}</span>
+        ${p.destaque ? '<span class="prod-new-badge">Destaque</span>' : ''}
+      </div>
+      <div class="prod-card-body">
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="prod-card-footer">
+          <span class="prod-sub-label">${p.sub}</span>
+          <button class="prod-action-btn" title="Ver detalhes" onclick="event.stopPropagation();openModal(${p.id})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-lucide="arrow-right"></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+      lucide.createIcons();
+      requestAnimationFrame(() => {
+        document.querySelectorAll('.prod-card.fade-in').forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 40);
+        });
+      });
+    }
+
+    function filterSeg(seg, btn) {
+      currentSeg = seg;
+      currentType = '';
+      document.querySelectorAll('.seg-btn[data-seg]').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.seg-btn[data-type]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCards();
+    }
+
+    function filterType(type, btn) {
+      currentType = currentType === type ? '' : type;
+      document.querySelectorAll('.seg-btn[data-type]').forEach(b => b.classList.remove('active'));
+      if (currentType) btn.classList.add('active');
+      renderCards();
+    }
+
+    function sortProducts(val) { sortOrder = val; renderCards(); }
+
+    function setView(v) {
+      currentView = v;
+      const grid = document.getElementById('prodGrid');
+      const gb = document.getElementById('gridViewBtn');
+      const lb = document.getElementById('listViewBtn');
+      if (v === 'grid') { grid.classList.remove('list-view'); gb.classList.add('active'); lb.classList.remove('active'); }
+      else { grid.classList.add('list-view'); lb.classList.add('active'); gb.classList.remove('active'); }
+      renderCards();
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+      currentSearch = this.value.toLowerCase().trim();
+      renderCards();
+    });
+
+    // Deep-link by URL param ?seg=xxx
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const initialSeg = params.get('seg');
+      const VALID = ['criacao', 'consumo', 'irrigacao', 'baterias', 'embalagens', 'industrial'];
+      if (initialSeg && VALID.includes(initialSeg)) {
+        currentSeg = initialSeg;
+        document.querySelectorAll('.seg-btn[data-seg]').forEach(b => {
+          b.classList.remove('active');
+          if (b.dataset.seg === initialSeg) b.classList.add('active');
+        });
+      }
+    })();
+
+    updateCounts();
+    renderCards();
+
+    // Fade observer
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: .1 });
+    const mo = new MutationObserver(() => { document.querySelectorAll('.fade-in:not(.visible)').forEach(el => obs.observe(el)); });
+    mo.observe(document.getElementById('prodGrid'), { childList: true });
+
+    // ─── MODAL ───────────────────────────────────────────────────────
+    const BENEFITS_MAP = {
+      estacao: ['Alta durabilidade', 'Fácil instalação', 'Manutenção simplificada', 'Múltiplos estágios de tratamento'],
+      dosador: ['Dosagem precisa e automática', 'Compatível com múltiplos produtos', 'Trava de segurança', 'Corpo resistente a químicos'],
+      filtro: ['Alta capacidade filtrante', 'Longa vida útil', 'Fácil substituição do elemento', 'Material certificado'],
+      purificador: ['Água pura e segura', 'Sem necessidade de encanamento', 'Refil de longa duração', 'Design compacto'],
+      tanque: ['Material anticorrosivo', 'Resistência térmica', 'Lacre hermético', 'Alta capacidade'],
+      acessorio: ['Alta resistência química', 'Fácil aplicação', 'Compatível com sistemas Kobratec', 'Qualidade certificada']
+    };
+
+    let currentFilteredList = [];
+    let currentModalIdx = 0;
+
+    function openModal(productId) {
+      currentFilteredList = getFiltered();
+      const idx = currentFilteredList.findIndex(p => p.id === productId);
+      currentModalIdx = idx >= 0 ? idx : 0;
+      renderModal();
+      document.getElementById('prodModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('prodModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('prodModal')) closeModal();
+    }
+
+    function navigateModal(dir) {
+      currentModalIdx = (currentModalIdx + dir + currentFilteredList.length) % currentFilteredList.length;
+      renderModal();
+    }
+
+    function renderRichContent(blocks, color) {
+      return blocks.map(b => {
+        if (b.type === 'text') {
+          return `<div class="rc-text"><p>${b.value}</p></div>`;
+        }
+        if (b.type === 'image') {
+          return `<div class="rc-img-wrap">
+        <img src="${b.src}" alt="${b.caption || ''}" loading="lazy">
+        ${b.caption ? `<div class="rc-img-caption">${b.caption}</div>` : ''}
+      </div>`;
+        }
+        if (b.type === 'list') {
+          const items = b.items.map(i => `<li>${i}</li>`).join('');
+          return `${b.title ? `<div class="modal-section-title" style="margin-top:20px">${b.title}</div>` : ''}<ul class="rc-list">${items}</ul>`;
+        }
+        return '';
+      }).join('');
+    }
+
+    function renderModal() {
+      const p = currentFilteredList[currentModalIdx];
+      if (!p) return;
+
+      // Scroll modal body to top
+      const body = document.getElementById('modalBodyEl');
+      if (body) body.scrollTop = 0;
+
+      // Header color
+      document.getElementById('modalHeader').style.background = `linear-gradient(135deg, ${p.color}18, ${p.color}30)`;
+
+      // Icon or product photo
+      const iconWrap = document.getElementById('modalIcon');
+      if (p.img) {
+        iconWrap.style.background = 'transparent';
+        iconWrap.style.boxShadow = 'none';
+        iconWrap.style.borderRadius = '12px';
+        iconWrap.style.overflow = 'hidden';
+        iconWrap.style.width = '80px';
+        iconWrap.style.height = '80px';
+        iconWrap.innerHTML = `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain;background:#f4f6f8;padding:4px;border-radius:12px;border:1px solid rgba(0,0,0,.08)">`;
+      } else {
+        iconWrap.style.background = `linear-gradient(135deg, ${p.color}, ${p.color}bb)`;
+        iconWrap.style.boxShadow = '0 8px 24px rgba(0,0,0,.2)';
+        iconWrap.style.width = '60px';
+        iconWrap.style.height = '60px';
+        iconWrap.innerHTML = `<svg id="modalIconSvg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" width="28" height="28" data-lucide="${p.icon}"></svg>`;
+        const iconSvg = iconWrap.querySelector('#modalIconSvg');
+        if (iconSvg) lucide.createIcons({ nodes: [iconSvg] });
+      }
+
+      // Texts
+      const segEl = document.getElementById('modalSeg');
+      segEl.textContent = SEG_LABELS[p.seg];
+      segEl.style.background = p.color + '22';
+      segEl.style.color = p.color;
+      document.getElementById('modalTitle').textContent = p.name;
+      document.getElementById('modalSub').textContent = p.sub;
+
+      // Determine if product has rich content
+      const hasRich = p.content && p.content.length > 0;
+
+      // Build tabs
+      const tabsEl = document.getElementById('modalTabsEl');
+      tabsEl.innerHTML = hasRich
+        ? `<button class="modal-tab-btn active" onclick="switchTab(this,'tab-desc')" id="tabBtn-desc">Descrição</button>
+       <button class="modal-tab-btn" onclick="switchTab(this,'tab-caract')" id="tabBtn-caract">Características</button>`
+        : `<button class="modal-tab-btn active" onclick="switchTab(this,'tab-desc')" id="tabBtn-desc">Descrição</button>
+       <button class="modal-tab-btn" onclick="switchTab(this,'tab-caract')" id="tabBtn-caract">Características</button>`;
+
+      // Build body content
+      const bodyEl = document.getElementById('modalBodyEl');
+
+      // -- Descricao tab --
+      let descHTML = '';
+      if (hasRich) {
+        descHTML = renderRichContent(p.content, p.color);
+      } else {
+        descHTML = `<div class="rc-text"><p>${p.desc}</p></div>`;
+      }
+
+      // -- Tags --
+      const tagsHTML = [
+        { icon: 'tag', label: SEG_LABELS[p.seg] },
+        { icon: 'layers', label: p.sub },
+        ...(p.destaque ? [{ icon: 'star', label: 'Produto Destaque' }] : [])
+      ].map(t => `<span class="modal-tag" style="color:${p.color};background:${p.color}12">
+    <svg viewBox="0 0 24 24" fill="none" stroke="${p.color}" stroke-width="2" data-lucide="${t.icon}"></svg>${t.label}
+  </span>`).join('');
+
+      // -- Benefits --
+      const benefits = BENEFITS_MAP[p.type] || BENEFITS_MAP['acessorio'];
+      const benefitsHTML = benefits.map(b =>
+        `<div class="modal-benefit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="${p.color}" stroke-width="2.5" width="15" height="15"><polyline points="20 6 9 17 4 12"/></svg>
+      ${b}
+    </div>`
+      ).join('');
+
+      bodyEl.innerHTML = `
+    <div class="modal-tab-panel active" id="tab-desc">
+      ${descHTML}
+    </div>
+    <div class="modal-tab-panel" id="tab-caract">
+      <div class="modal-section-title">Identificação</div>
+      <div class="modal-tags" style="margin-bottom:20px">${tagsHTML}</div>
+      <div class="modal-section-title">Vantagens</div>
+      <div class="modal-benefits">${benefitsHTML}</div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn-primary" onclick="solicitarOrcamento()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Solicitar Orçamento
+      </button>
+      <button class="modal-btn-secondary" onclick="abrirWhatsApp()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Falar no WhatsApp
+      </button>
+    </div>`;
+
+      // Navigation
+      const total = currentFilteredList.length;
+      document.getElementById('modalPos').textContent = `${currentModalIdx + 1} de ${total}`;
+      document.getElementById('modalPrev').style.opacity = total <= 1 ? '0.3' : '1';
+      document.getElementById('modalNext').style.opacity = total <= 1 ? '0.3' : '1';
+
+      lucide.createIcons();
+    }
+
+    function switchTab(btn, panelId) {
+      document.querySelectorAll('.modal-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.modal-tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = document.getElementById(panelId);
+      if (panel) panel.classList.add('active');
+    }
+
+    function solicitarOrcamento() {
+      const p = currentFilteredList[currentModalIdx];
+      const subject = encodeURIComponent(`Orçamento: ${p ? p.name : 'Produto Kobratec'}`);
+      window.open(`mailto:contato@kobratec.com.br?subject=${subject}`, '_blank');
+    }
+
+    function abrirWhatsApp() {
+      const p = currentFilteredList[currentModalIdx];
+      const msg = encodeURIComponent(`Olá! Gostaria de mais informações sobre o produto: ${p ? p.name : 'produto Kobratec'}.`);
+      window.open(`https://wa.me/5543999999999?text=${msg}`, '_blank');
+    }
+
+    // ESC to close
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+
+</html>
